@@ -3,7 +3,7 @@ package Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AmazonHomePage extends BasePage{
+public class AmazonLandingPage extends BasePage{
 
     By loginButton = By.id("nav-link-accountList");
     By emailInput = By.id("ap_email");
@@ -11,7 +11,7 @@ public class AmazonHomePage extends BasePage{
     By passwordInput = By.id("ap_password");
     By loginSubmitButton = By.id("signInSubmit");
 
-    AmazonHomePage(WebDriver driver){
+    AmazonLandingPage(WebDriver driver){
         super(driver);
     }
 
