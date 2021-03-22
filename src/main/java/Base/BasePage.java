@@ -17,8 +17,8 @@ public class BasePage {
         driver.findElement(element).click();
     }
 
-    public void sendKeys(By element, String firstValue, String secondValue)
+    public void sendKeys(By element, String text)
     {
-
+        driver.findElement(element).sendKeys(text);
     }
 }
