@@ -35,4 +35,16 @@ public class BasePage {
     public WebElement findElement(String id){
         return driver.findElement(By.id(id));
     }
+
+    public String GetElementTextById(String id){
+        return driver.findElement(By.id(id)).getText();
+    }
+
+    public String GetElementTextByXpath(String xpath){
+        return driver.findElement(By.xpath(xpath)).getText();
+    }
+
+    public String GetElementTextByCssSelector(String selector){
+        return driver.findElement(By.cssSelector(selector)).getText();
+    }
 }
