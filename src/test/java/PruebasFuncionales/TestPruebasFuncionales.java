@@ -9,7 +9,7 @@ import Base.BaseTest;
 public class TestPruebasFuncionales extends  BaseTest{
 
 /*AL MOMENTO DE PROBAR UN CASO DE MANERA INDEPENDIENTE SE DEBE DE CAMBIAR EL PARAMETRO DE PRIORIDAD Y COMENTAR EL RESTO
-* PARA QUE EL SISTEMA NO CORRA EL PROCESO N VECES*/
+* PARA QUE EL SISTEMA NO CORRA EL PROCESO N VECES  */
 
     @Test(priority = 1)
     @Parameters({"email", "password"})
