@@ -1,5 +1,6 @@
 package Base;
 
+import PruebasFuncionales.PruebasFuncionales;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     public WebDriver driver;
-    public AmazonHomePage amazonHomePage;
+    public AmazonLandingPage amazonHomePage;
+    public PruebasFuncionales pruebasFuncionales;
 
     @Parameters({"URL"})
     @BeforeClass
@@ -30,8 +32,13 @@ public class BaseTest {
     @BeforeMethod
     public void methodLevelSetUp(String email, String password)
     {
-        amazonHomePage = new AmazonHomePage(driver);
+        InitializeComponents();
         amazonHomePage.Login(email, password);
+    }
+
+    public void InitializeComponents(){
+        amazonHomePage = new AmazonLandingPage(driver);
+        pruebasFuncionales = new PruebasFuncionales(driver);
     }
 
     @AfterClass
