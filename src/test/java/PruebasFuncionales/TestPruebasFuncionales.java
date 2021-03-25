@@ -41,6 +41,14 @@ public class TestPruebasFuncionales extends  BaseTest{
     {
         pruebasFuncionales.CreateAccount( Name,emailNew,passwordNew,passwordConfirm);
     }
+    @Test
+    public void ChangeCoin(){
+        pruebasFuncionales.ChangeCoin();
+    }
+    @Test
+    public  void FilterByArticle(){
+        pruebasFuncionales.FilterByArticle();
+    }
 
 
 
