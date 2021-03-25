@@ -28,12 +28,10 @@ public class BaseTest {
         driver.get(URL);
     }
 
-    @Parameters({"email", "password"})
     @BeforeMethod
-    public void methodLevelSetUp(String email, String password)
+    public void methodLevelSetUp()
     {
         InitializeComponents();
-        amazonHomePage.Login(email, password);
     }
 
     public void InitializeComponents(){
