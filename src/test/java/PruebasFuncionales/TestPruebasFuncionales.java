@@ -14,44 +14,12 @@ public class TestPruebasFuncionales extends BaseTest {
 
     @Test(priority = 2)
     public void ChangeLanguage() {
-        pruebasFuncionales.ChangeLanguage("Wunschlisten",
-                "#nav-xshop > a:nth-child(7)",
-                "//span[contains(text(),'Deutsch - DE')]");
-
-        pruebasFuncionales.ChangeLanguage("Listas",
-                "#nav-xshop > a:nth-child(7)",
-                "//span[contains(text(),'Español - ES')]");
+        pruebasFuncionales.ChangeLanguage("Wunschlisten", "#nav-xshop > a:nth-child(8)", "//span[contains(text(),'Deutsch - DE')]");
+        pruebasFuncionales.ChangeLanguage("Listas", "#nav-xshop > a:nth-child(8)", "//span[contains(text(),'Español - ES')]");
     }
 
     @Test(priority = 3)
     public void CheckOrders() {
         pruebasFuncionales.CheckOrders();
-    }
-
-    @Test(priority = 3)
-    @Parameters({"NameArt"})
-    public void methodSetUpFilter(String word) {
-        pruebasFuncionales.FilterArticle(word);
-    }
-
-    @Test(priority = 4)
-    @Parameters({"emailFail", "passwordFail"})
-    public void LoginFail(String email, String password) {
-        pruebasFuncionales.LoginFail(email, password);
-    }
-
-    @Test(priority = 5)
-    @Parameters({"Name", "emailNew","passwordNew","passwordConfirm"})
-    public void CreateAccount(String Name, String emailNew, String passwordNew , String passwordConfirm ) {
-        pruebasFuncionales.CreateAccount( Name,emailNew,passwordNew,passwordConfirm);
-    }
-
-    @Test
-    public void ChangeCoin(){
-        pruebasFuncionales.ChangeCoin();
-    }
-    @Test
-    public  void FilterByArticle(){
-        pruebasFuncionales.FilterByArticle();
     }
 }

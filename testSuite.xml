@@ -3,39 +3,31 @@
 <suite name="Suite">
 
     <parameter name="URL" value="https://www.amazon.com/" />
-
-    <!-- Parametros cambio idioma-->
-
-
-    <!-- Parametros login correcto-->
     <parameter name="email" value="jmadrigal_94@outlook.com" />
     <parameter name="password" value="sanchez30.30" />
-
-
-
-    <!-- Parametros login incorrecto-->
     <parameter name="emailFail" value="russellm434@gmail.com" />
     <parameter name="passwordFail" value="saffdv" />
-    <test name="LoginFail">
-        <classes>
-            <class name="PruebasFuncionales.TestPruebasFuncionales"/>
-        </classes>
-    </test>
-
-    <!-- Parametros para creacion de cuenta nueva-->
     <parameter name="Name" value="Automation Tester" />
     <parameter name="emailNew" value="autotesterqa70@gmail.com" />
     <parameter name="passwordNew" value="@tester1166TY" />
     <parameter name="passwordConfirm" value="@tester1166TY" />
-
-
-    <!-- Parametros para busqueda en filtro-->
     <parameter name="NameArt" value="Ipad" />
-    <test name="Test">
+
+    <test name="TestPruebasUnitarias">
+        <classes>
+            <class name="PruebasUnitarias.TestPruebasUnitarias"/>
+        </classes>
+    </test>
+
+    <test name="TestPruebasFuncionales">
         <classes>
             <class name="PruebasFuncionales.TestPruebasFuncionales"/>
         </classes>
     </test>
 
-
+    <test name="TestPruebasIntegracion">
+        <classes>
+            <class name="PruebasIntegracion.TestPruebasIntegracion"/>
+        </classes>
+    </test>
 </suite>
