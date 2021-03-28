@@ -22,14 +22,14 @@
     </test>
 
 
-<!--    &lt;!&ndash; Parametros login incorrecto&ndash;&gt;
+    <!-- Parametros login incorrecto-->
     <parameter name="emailFail" value="russellm434@gmail.com" />
     <parameter name="passwordFail" value="saffdv" />
     <test name="LoginFail">
         <classes>
             <class name="PruebasFuncionales.TestPruebasFuncionales"/>
         </classes>
-    </test>-->
+    </test>
 
     <!-- Parametros para creacion de cuenta nueva-->
     <parameter name="Name" value="Automation Tester" />
