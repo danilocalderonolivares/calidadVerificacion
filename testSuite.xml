@@ -6,20 +6,11 @@
 
     <!-- Parametros cambio idioma-->
 
-    <test name="ChangeLanguage">
-        <classes>
-            <class name="PruebasFuncionales.TestPruebasFuncionales"/>
-        </classes>
-    </test>
 
     <!-- Parametros login correcto-->
-    <parameter name="email" value="russellm434@gmail.com" />
-    <parameter name="password" value="teoteo1111" />
-    <test name="Login">
-        <classes>
-            <class name="PruebasFuncionales.TestPruebasFuncionales"/>
-        </classes>
-    </test>
+    <parameter name="email" value="jmadrigal_94@outlook.com" />
+    <parameter name="password" value="sanchez30.30" />
+
 
 
 <!--    &lt;!&ndash; Parametros login incorrecto&ndash;&gt;
@@ -36,17 +27,13 @@
     <parameter name="emailNew" value="autotesterqa70@gmail.com" />
     <parameter name="passwordNew" value="@tester1166TY" />
     <parameter name="passwordConfirm" value="@tester1166TY" />
-    <test name="CreateAccount">
-        <classes>
-            <class name="PruebasFuncionales.TestPruebasFuncionales"/>
-        </classes>
-    </test>
+
 
     <!-- Parametros para busqueda en filtro-->
     <parameter name="NameArt" value="Ipad" />
     <test name="Test">
         <classes>
-            <class name="PruebasFuncionales.PruebasFuncionales"/>
+            <class name="PruebasFuncionales.TestPruebasFuncionales"/>
         </classes>
     </test>
 

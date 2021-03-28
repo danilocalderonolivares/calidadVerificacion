@@ -1,15 +1,10 @@
 package Base;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AmazonLandingPage extends BasePage{
 
-
-
-    AmazonLandingPage(WebDriver driver){
+    AmazonLandingPage(WebDriver driver) {
         super(driver);
     }
-
-
 }
