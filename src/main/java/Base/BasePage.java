@@ -32,8 +32,12 @@ public class BasePage {
         hover.perform();
     }
 
-    public WebElement findElement(String id){
+    public WebElement findElementById(String id){
         return driver.findElement(By.id(id));
+    }
+
+    public By findElementByXpath(String xpath){
+        return By.xpath(xpath);
     }
 
     public String GetElementTextById(String id){

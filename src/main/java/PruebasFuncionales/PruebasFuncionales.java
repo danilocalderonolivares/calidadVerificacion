@@ -4,14 +4,11 @@ import Base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
-
-import java.util.concurrent.TimeUnit;
 
 public class PruebasFuncionales extends BasePage{
 
     By changeLanguageButton = By.id("icp-nav-flyout");
-    By languageRadioButton = By.xpath("//span[contains(text(),'Español - ES')][1]");
+    By languageRadioButton;
     By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
     By selectBtn = By.xpath("//*[@id=\"a-autoid-0-announce\"]");
     By changeCoin = By.xpath("//*[@id=\"icp-sc-dropdown_63\"]");
@@ -46,18 +43,29 @@ public class PruebasFuncionales extends BasePage{
     By addArticle = By.xpath("//*[@id=\"add-to-cart-button\"]");
     By verifShop = By.xpath("//*[@id=\"nav-cart-text-container\"]/span[2]");
 
+    By myAcoountButton = By.id("nav-link-accountList");
+    By myOrdersButton = By.cssSelector("#a-page > div.a-container > div > div:nth-child(2) > div:nth-child(1)");
 
     public PruebasFuncionales(WebDriver driver){
         super(driver);
     }
 
-    public void ChangeLanguage(){
+    public void ChangeLanguage(String expectedValue, String pathToText, String elementXpath){
         click(changeLanguageButton);
+        languageRadioButton = findElementByXpath(elementXpath);
         click(languageRadioButton);
         click(saveChangesButton);
 
-        String valueToCompare = GetElementTextByCssSelector("#nav-xshop > a:nth-child(7)");
-        Assert.assertEquals(valueToCompare, "Listas");
+        String valueToCompare = GetElementTextByCssSelector(pathToText);
+        Assert.assertEquals(valueToCompare, expectedValue);
+    }
+
+    public void CheckOrders(){
+        click(myAcoountButton);
+        click(myOrdersButton);
+
+        String valueToCompare = GetElementTextByCssSelector("#yourOrdersContent > div.a-row > div:nth-child(1) > h1");
+        Assert.assertEquals(valueToCompare, "Tus pedidos");
     }
 
     //Test 1 Inicio de sesión exitoso
