@@ -33,7 +33,7 @@ public class PruebasUnitarias extends BasePage {
         click(loginSubmitButton);
     }
 
-    /*public void CreateAccount(String Name, String emailNew, String passwordNew, String passwordConfirm) {
+    public void CreateAccount(String Name, String emailNew, String passwordNew, String passwordConfirm) {
         click(loginButton);
         click(createAccountButton);
         sendKeys(nameInput, Name);
@@ -41,5 +41,5 @@ public class PruebasUnitarias extends BasePage {
         sendKeys(passInput, passwordNew);
         sendKeys(passConfInput, passwordConfirm);
         click(btnPass);
-    }*/
+    }
 }

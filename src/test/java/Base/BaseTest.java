@@ -16,10 +16,10 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     public WebDriver driver;
-    public AmazonLandingPage amazonHomePage;
     public PruebasFuncionales pruebasFuncionales;
     public PruebasIntegracion pruebasIntegracion;
     public PruebasUnitarias pruebasUnitarias;
+    public BasePage basePage;
 
     @Parameters({"URL"})
     @BeforeClass
@@ -38,7 +38,7 @@ public class BaseTest {
     }
 
     public void InitializeComponents() {
-        amazonHomePage = new AmazonLandingPage(driver);
+        basePage = new BasePage(driver);
         pruebasFuncionales = new PruebasFuncionales(driver);
         pruebasIntegracion = new PruebasIntegracion(driver);
         pruebasUnitarias = new PruebasUnitarias(driver);

@@ -28,6 +28,9 @@ public class PruebasFuncionales extends BasePage {
         click(continueButton);
         sendKeys(passwordInput, password);
         click(loginSubmitButton);
+
+        String valueToCompare = GetElementTextByCssSelector("#nav-xshop > a:nth-child(8)");
+        Assert.assertEquals(valueToCompare, "Buy Again");
     }
 
     public void ChangeLanguage(String expectedValue, String pathToText, String elementXpath) {
@@ -36,15 +39,15 @@ public class PruebasFuncionales extends BasePage {
         click(languageRadioButton);
         click(saveChangesButton);
 
-        String valueToCompare = GetElementTextByCssSelector(pathToText);
+        String valueToCompare = GetElementTextById(pathToText);
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 
-    public void CheckOrders() {
+    public void CheckOrders(String expectedValue, String pathToText) {
         click(myAccountButton);
         click(myOrdersButton);
 
-        String valueToCompare = GetElementTextByCssSelector("#yourOrdersContent > div.a-row > div:nth-child(1) > h1");
-        Assert.assertEquals(valueToCompare, "Tus pedidos");
+        String valueToCompare = GetElementTextByCssSelector(pathToText);
+        Assert.assertEquals(valueToCompare, expectedValue);
     }
 }

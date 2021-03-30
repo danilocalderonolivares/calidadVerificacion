@@ -9,6 +9,9 @@ public class BasePage {
 
     WebDriver driver;
     Actions hover;
+    By changeLanguageButton = By.id("icp-nav-flyout");
+    By languageRadioButton;
+    By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -47,5 +50,12 @@ public class BasePage {
 
     public String GetElementTextByCssSelector(String selector) {
         return driver.findElement(By.cssSelector(selector)).getText();
+    }
+
+    public void SetDefaultLanguage() {
+        click(changeLanguageButton);
+        languageRadioButton = findElementByXpath("//span[contains(text(),'English - EN')]");
+        click(languageRadioButton);
+        click(saveChangesButton);
     }
 }
