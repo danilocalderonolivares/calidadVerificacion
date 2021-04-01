@@ -27,29 +27,29 @@ public class PruebasIntegracion extends BasePage {
     }
 
     public void FilterByArticle() {
-        click(btnMenu);
-        click(optionMenu1);
-        click(optionMenu2);
-        click(articleCam);
-        click(addArticle);
-        click(verifyShop);
+        Click(btnMenu);
+        Click(optionMenu1);
+        Click(optionMenu2);
+        Click(articleCam);
+        Click(addArticle);
+        Click(verifyShop);
     }
 
     public void ChangeCoin() {
-        click(changeLanguageButton);
+        Click(changeLanguageButton);
         //Se debe enviar por parametro el idioma que se quiere o crealo en esta clase como variable global
         //click(languageRadioButton); languageRadioButton = findElementByXpath(elementXpath);
-        click(selectBtn);
-        click(changeCoin);
-        click(saveChangesButton);
+        Click(selectBtn);
+        Click(changeCoin);
+        Click(saveChangesButton);
     }
 
     public void FilterArticle(String word) {
-        click(filterName);
-        sendKeys(filterName, word);
-        click(btnSearch);
-        click(article);
-        click(shopCar);
-        click(verifyShopCar);
+        Click(filterName);
+        SendKeys(filterName, word);
+        Click(btnSearch);
+        Click(article);
+        Click(shopCar);
+        Click(verifyShopCar);
     }
 }

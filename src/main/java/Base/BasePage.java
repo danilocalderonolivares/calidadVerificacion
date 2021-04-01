@@ -18,25 +18,25 @@ public class BasePage {
         hover = new Actions(driver);
     }
 
-    public void click(By element) {
+    public void Click(By element) {
         driver.findElement(element).click();
     }
 
-    public void sendKeys(By element, String text) {
+    public void SendKeys(By element, String text) {
         driver.findElement(element).sendKeys(text);
     }
 
-    public void hover(WebElement element) {
-        hover.moveToElement(element);
-        hover.build();
-        hover.perform();
+    public void HoverElement(String id) throws InterruptedException {
+        WebElement element = FindElementById(id);
+        hover.moveToElement(element).perform();
+        Thread.sleep(3000);
     }
 
-    public WebElement findElementById(String id) {
+    public WebElement FindElementById(String id) {
         return driver.findElement(By.id(id));
     }
 
-    public By findElementByXpath(String xpath) {
+    public By FindElementByXpath(String xpath) {
         return By.xpath(xpath);
     }
 
@@ -53,13 +53,13 @@ public class BasePage {
     }
 
     public boolean CheckElementExistsById(String id) {
-        return driver.findElements(By.id(id)).isEmpty();
+        return !driver.findElements(By.id(id)).isEmpty();
     }
 
     public void SetDefaultLanguage() {
-        click(changeLanguageButton);
-        languageRadioButton = findElementByXpath("//span[contains(text(),'English - EN')]");
-        click(languageRadioButton);
-        click(saveChangesButton);
+        Click(changeLanguageButton);
+        languageRadioButton = FindElementByXpath("//span[contains(text(),'English - EN')]");
+        Click(languageRadioButton);
+        Click(saveChangesButton);
     }
 }

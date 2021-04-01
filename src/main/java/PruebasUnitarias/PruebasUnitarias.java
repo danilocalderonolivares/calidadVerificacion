@@ -26,20 +26,20 @@ public class PruebasUnitarias extends BasePage {
     }
 
     public void LoginFail(String email, String password) {
-        click(loginButton);
-        sendKeys(emailInput, email);
-        click(continueButton);
-        sendKeys(passwordInput, password);
-        click(loginSubmitButton);
+        Click(loginButton);
+        SendKeys(emailInput, email);
+        Click(continueButton);
+        SendKeys(passwordInput, password);
+        Click(loginSubmitButton);
     }
 
     public void CreateAccount(String Name, String emailNew, String passwordNew, String passwordConfirm) {
-        click(loginButton);
-        click(createAccountButton);
-        sendKeys(nameInput, Name);
-        sendKeys(mailInput, emailNew);
-        sendKeys(passInput, passwordNew);
-        sendKeys(passConfInput, passwordConfirm);
-        click(btnPass);
+        Click(loginButton);
+        Click(createAccountButton);
+        SendKeys(nameInput, Name);
+        SendKeys(mailInput, emailNew);
+        SendKeys(passInput, passwordNew);
+        SendKeys(passConfInput, passwordConfirm);
+        Click(btnPass);
     }
 }

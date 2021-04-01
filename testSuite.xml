@@ -14,7 +14,7 @@
     <parameter name="passwordConfirm" value="@tester1166TY"/>
     <parameter name="NameArt" value="Ipad"/>
 
-    <!--<test name="TestPruebasUnitarias">
+    <test name="TestPruebasUnitarias">
         <classes>
             <class name="PruebasUnitarias.TestPruebasUnitarias"/>
         </classes>
@@ -30,7 +30,7 @@
         <classes>
             <class name="PruebasIntegracion.TestPruebasIntegracion"/>
         </classes>
-    </test>-->
+    </test>
 
     <test name="TestPruebasHumo">
         <classes>

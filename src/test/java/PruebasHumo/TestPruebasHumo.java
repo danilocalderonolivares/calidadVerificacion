@@ -19,12 +19,18 @@ public class TestPruebasHumo extends BaseTest {
     @Test(priority = 3)
     @Parameters({"email", "password"})
     public void LoginWorksCorrectly(String email, String password) {
-        pruebasFuncionales.Login(email, password);
+        pruebasFuncionales.Login(email, password, "Buy Again");
         //Meter un escenario extra con la otra cuenta de login
     }
 
     @Test(priority = 4)
-    public void MyAccountButtonWorksCorrectly() {
-        pruebasHumo.MyAccountButtonWorksCorrectly();
+    @Parameters({"email", "password"})
+    public void ClickMyAccountButtonWorksCorrectly(String email, String password) throws InterruptedException {
+        pruebasHumo.ClickMyAccountButtonWorksCorrectly(email, password, "Your Account");
+    }
+
+    @Test(priority = 5)
+    public void HoverOverMyAccountButtonWorksCorrectly() throws InterruptedException {
+        pruebasHumo.HoverOverMyAccountButtonWorksCorrectly();
     }
 }

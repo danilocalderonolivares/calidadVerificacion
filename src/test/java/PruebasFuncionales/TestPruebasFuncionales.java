@@ -9,7 +9,7 @@ public class TestPruebasFuncionales extends BaseTest {
     @Test(priority = 1)
     @Parameters({"email", "password"})
     public void Login(String email, String password) {
-        pruebasFuncionales.Login(email, password);
+        pruebasFuncionales.Login(email, password, "Buy Again");
     }
 
     @Test(priority = 2)

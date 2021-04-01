@@ -22,30 +22,30 @@ public class PruebasFuncionales extends BasePage {
         super(driver);
     }
 
-    public void Login(String email, String password) {
-        click(loginButton);
-        sendKeys(emailInput, email);
-        click(continueButton);
-        sendKeys(passwordInput, password);
-        click(loginSubmitButton);
+    public void Login(String email, String password, String expectedValue) {
+        Click(loginButton);
+        SendKeys(emailInput, email);
+        Click(continueButton);
+        SendKeys(passwordInput, password);
+        Click(loginSubmitButton);
 
         String valueToCompare = GetElementTextByCssSelector("#nav-xshop > a:nth-child(8)");
-        Assert.assertEquals(valueToCompare, "Buy Again");
+        Assert.assertEquals(valueToCompare, expectedValue);
     }
 
     public void ChangeLanguage(String expectedValue, String pathToText, String elementXpath) {
-        click(changeLanguageButton);
-        languageRadioButton = findElementByXpath(elementXpath);
-        click(languageRadioButton);
-        click(saveChangesButton);
+        Click(changeLanguageButton);
+        languageRadioButton = FindElementByXpath(elementXpath);
+        Click(languageRadioButton);
+        Click(saveChangesButton);
 
         String valueToCompare = GetElementTextById(pathToText);
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 
     public void CheckOrders(String expectedValue, String pathToText) {
-        click(myAccountButton);
-        click(myOrdersButton);
+        Click(myAccountButton);
+        Click(myOrdersButton);
 
         String valueToCompare = GetElementTextByCssSelector(pathToText);
         Assert.assertEquals(valueToCompare, expectedValue);
