@@ -1,6 +1,7 @@
 package Base;
 
 import PruebasFuncionales.PruebasFuncionales;
+import PruebasHumo.PruebasHumo;
 import PruebasIntegracion.PruebasIntegracion;
 import PruebasUnitarias.PruebasUnitarias;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ public class BaseTest {
     public PruebasFuncionales pruebasFuncionales;
     public PruebasIntegracion pruebasIntegracion;
     public PruebasUnitarias pruebasUnitarias;
+    public PruebasHumo pruebasHumo;
     public BasePage basePage;
 
     @Parameters({"URL"})
@@ -42,6 +44,7 @@ public class BaseTest {
         pruebasFuncionales = new PruebasFuncionales(driver);
         pruebasIntegracion = new PruebasIntegracion(driver);
         pruebasUnitarias = new PruebasUnitarias(driver);
+        pruebasHumo = new PruebasHumo(driver);
     }
 
     @AfterClass

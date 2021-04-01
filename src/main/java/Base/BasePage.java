@@ -52,6 +52,10 @@ public class BasePage {
         return driver.findElement(By.cssSelector(selector)).getText();
     }
 
+    public boolean CheckElementExistsById(String id) {
+        return driver.findElements(By.id(id)).isEmpty();
+    }
+
     public void SetDefaultLanguage() {
         click(changeLanguageButton);
         languageRadioButton = findElementByXpath("//span[contains(text(),'English - EN')]");
