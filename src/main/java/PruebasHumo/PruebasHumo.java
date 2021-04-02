@@ -10,9 +10,32 @@ public class PruebasHumo extends BasePage {
     By categoriesMenuButton = By.id("nav-hamburger-menu");
     By categoriesMenuCloseButton = By.cssSelector("#hmenu-canvas-background > div");
     By loginButton = By.id("nav-link-accountList");
+    By emailInput = By.id("ap_email");
+    By continueButton = By.id("continue");
+    By passwordInput = By.id("ap_password");
+    By loginSubmitButton = By.id("signInSubmit");
 
     public PruebasHumo(WebDriver driver) {
         super(driver);
+    }
+
+    public void Login(String email, String password, String expectedValue) {
+        Click(loginButton);
+        SendKeys(emailInput, email);
+        Click(continueButton);
+        SendKeys(passwordInput, password);
+        Click(loginSubmitButton);
+
+        String valueToCompare = GetElementTextByCssSelector("#nav-xshop > a:nth-child(8)");
+        Assert.assertEquals(valueToCompare, expectedValue);
+    }
+
+    public void Login(String email, String password) {
+        Click(loginButton);
+        SendKeys(emailInput, email);
+        Click(continueButton);
+        SendKeys(passwordInput, password);
+        Click(loginSubmitButton);
     }
 
     public void LandingPageLoadsHamburgerMenu(String expectedValue, String pathToText) throws InterruptedException {

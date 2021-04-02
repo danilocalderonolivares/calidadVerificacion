@@ -19,7 +19,7 @@ public class TestPruebasHumo extends BaseTest {
     @Test(priority = 3)
     @Parameters({"email", "password"})
     public void LoginWorksCorrectly(String email, String password) {
-        pruebasFuncionales.Login(email, password, "Buy Again");
+        pruebasHumo.Login(email, password, "Buy Again");
         //Meter un escenario extra con la otra cuenta de login
     }
 

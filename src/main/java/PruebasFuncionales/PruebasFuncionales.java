@@ -12,25 +12,13 @@ public class PruebasFuncionales extends BasePage {
     By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
     By myAccountButton = By.id("nav-link-accountList");
     By myOrdersButton = By.cssSelector("#a-page > div.a-container > div > div:nth-child(2) > div:nth-child(1)");
-    By loginButton = By.id("nav-link-accountList");
-    By emailInput = By.id("ap_email");
-    By continueButton = By.id("continue");
-    By passwordInput = By.id("ap_password");
-    By loginSubmitButton = By.id("signInSubmit");
+    By searchBar = By.id("twotabsearchtextbox");
+    By addToCartButton = By.id("add-to-cart-button");
+    By myCartButton = By.id("nav-cart");
+    By searchButton = By.id("nav-search-submit-button");
 
     public PruebasFuncionales(WebDriver driver) {
         super(driver);
-    }
-
-    public void Login(String email, String password, String expectedValue) {
-        Click(loginButton);
-        SendKeys(emailInput, email);
-        Click(continueButton);
-        SendKeys(passwordInput, password);
-        Click(loginSubmitButton);
-
-        String valueToCompare = GetElementTextByCssSelector("#nav-xshop > a:nth-child(8)");
-        Assert.assertEquals(valueToCompare, expectedValue);
     }
 
     public void ChangeLanguage(String expectedValue, String pathToText, String elementXpath) {
@@ -48,6 +36,20 @@ public class PruebasFuncionales extends BasePage {
         Click(myOrdersButton);
 
         String valueToCompare = GetElementTextByCssSelector(pathToText);
+        Assert.assertEquals(valueToCompare, expectedValue);
+    }
+
+    public void AddItemToCart(String itemName, String expectedValue, String itemXpath, String itemPath) throws InterruptedException {
+        SendKeys(searchBar, itemName);
+        Click(searchButton);
+        Thread.sleep(1500);
+        By firstItem = By.xpath(itemXpath);
+        Click(firstItem);
+        Click(addToCartButton);
+        Click(myCartButton);
+
+        Thread.sleep(1500);
+        String valueToCompare = GetElementTextById(itemPath);
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 }
