@@ -1,6 +1,9 @@
 package Base;
 
 import PruebasFuncionales.PruebasFuncionales;
+import PruebasHumo.PruebasHumo;
+import PruebasIntegracion.PruebasIntegracion;
+import PruebasUnitarias.PruebasUnitarias;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,34 +17,38 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     public WebDriver driver;
-    public AmazonLandingPage amazonHomePage;
     public PruebasFuncionales pruebasFuncionales;
+    public PruebasIntegracion pruebasIntegracion;
+    public PruebasUnitarias pruebasUnitarias;
+    public PruebasHumo pruebasHumo;
+    public BasePage basePage;
 
     @Parameters({"URL"})
     @BeforeClass
-    public void TestSetUp(String URL)
-    {
+    public void TestSetUp(String URL) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(URL);
-    }
-
-    @BeforeMethod
-    public void methodLevelSetUp()
-    {
         InitializeComponents();
     }
 
-    public void InitializeComponents(){
-        amazonHomePage = new AmazonLandingPage(driver);
+    @BeforeMethod
+    public void methodLevelSetUp() {
+
+    }
+
+    public void InitializeComponents() {
+        basePage = new BasePage(driver);
         pruebasFuncionales = new PruebasFuncionales(driver);
+        pruebasIntegracion = new PruebasIntegracion(driver);
+        pruebasUnitarias = new PruebasUnitarias(driver);
+        pruebasHumo = new PruebasHumo(driver);
     }
 
     @AfterClass
-    public void teardown()
-    {
-        //driver.quit();
+    public void teardown() {
+        driver.quit();
     }
 }

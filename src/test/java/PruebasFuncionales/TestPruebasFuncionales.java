@@ -1,47 +1,41 @@
 package PruebasFuncionales;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import Base.BaseTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import Base.BaseTest;
 
-public class TestPruebasFuncionales extends  BaseTest{
-
-/*AL MOMENTO DE PROBAR UN CASO DE MANERA INDEPENDIENTE SE DEBE DE CAMBIAR EL PARAMETRO DE PRIORIDAD Y COMENTAR EL RESTO
-* PARA QUE EL SISTEMA NO CORRA EL PROCESO N VECES  */
+public class TestPruebasFuncionales extends BaseTest {
 
     @Test(priority = 1)
     @Parameters({"email", "password"})
-    public void Login(String email, String password){
-      pruebasFuncionales.Login(email, password);
-    }
-    @Test(priority = 2)
-    public void ChangeLanguage(){
-      pruebasFuncionales.ChangeLanguage();
+    public void ChangeLanguageToGerman(String email, String password) {
+        pruebasHumo.Login(email, password);
+        pruebasFuncionales.ChangeLanguage("Alle", "nav-search-label-id", "//span[contains(text(),'Deutsch - DE')]");
     }
 
-    //Test 4 Filtro de busqueda
     @Test(priority = 2)
-    @Parameters({"NameArt"})
-    public void methodSetUpFilter(String word)
-    {
-        pruebasFuncionales.FilterArticle(word);
+    public void ChangeLanguageToSpanish() {
+        pruebasFuncionales.ChangeLanguage("Todos", "nav-search-label-id", "//span[contains(text(),'Español - ES')]");
+    }
+
+    @Test(priority = 3)
+    public void CheckOrdersSpanish() {
+        pruebasFuncionales.CheckOrders("Tus pedidos", "#yourOrdersContent > div.a-row > div:nth-child(1) > h1");
     }
 
     @Test(priority = 4)
-    @Parameters({"emailFail", "passwordFail"})
-    public void LoginFail(String email, String password){
-      pruebasFuncionales.LoginFail(email, password);
+    public void CheckOrdersEnglish() {
+        basePage.SetDefaultLanguage();
+        pruebasFuncionales.CheckOrders("Your Orders", "#yourOrdersContent > div.a-row > div:nth-child(1) > h1");
     }
 
     @Test(priority = 5)
-    @Parameters({"Name", "emailNew","passwordNew","passwordConfirm"})
-    public void CreateAccount(String Name, String emailNew, String passwordNew , String passwordConfirm )
-    {
-        pruebasFuncionales.CreateAccount( Name,emailNew,passwordNew,passwordConfirm);
+    public void AddItemToCart() throws InterruptedException {
+        pruebasFuncionales.AddItemToCart("Asus laptop", "1", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
     }
 
-
-    
+    @Test(priority = 6)
+    public void AddAnotherItemToCart() throws InterruptedException {
+        pruebasFuncionales.AddItemToCart("Iphone", "2", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
+    }
 }
