@@ -3,6 +3,7 @@ package Base;
 import PruebasFuncionales.PruebasFuncionales;
 import PruebasHumo.PruebasHumo;
 import PruebasIntegracion.PruebasIntegracion;
+import PruebasRegresion.PruebasRegresion;
 import PruebasUnitarias.PruebasUnitarias;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,7 @@ public class BaseTest {
     public PruebasIntegracion pruebasIntegracion;
     public PruebasUnitarias pruebasUnitarias;
     public PruebasHumo pruebasHumo;
+    public PruebasRegresion pruebasRegresion;
     public BasePage basePage;
 
     @Parameters({"URL"})
@@ -41,10 +43,11 @@ public class BaseTest {
 
     public void InitializeComponents() {
         basePage = new BasePage(driver);
-        pruebasFuncionales = new PruebasFuncionales(driver);
-        pruebasIntegracion = new PruebasIntegracion(driver);
-        pruebasUnitarias = new PruebasUnitarias(driver);
+//        pruebasFuncionales = new PruebasFuncionales(driver);
+//        pruebasIntegracion = new PruebasIntegracion(driver);
+//        pruebasUnitarias = new PruebasUnitarias(driver);
         pruebasHumo = new PruebasHumo(driver);
+        pruebasRegresion =  new PruebasRegresion(driver);
     }
 
     @AfterClass

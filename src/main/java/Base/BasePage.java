@@ -62,4 +62,8 @@ public class BasePage {
         Click(languageRadioButton);
         Click(saveChangesButton);
     }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
 }
