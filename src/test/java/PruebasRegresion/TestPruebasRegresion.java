@@ -6,10 +6,16 @@ import org.testng.annotations.Test;
 
 public class TestPruebasRegresion extends BaseTest {
 
+//    @Test(priority = 1)
+//    @Parameters({"email", "password"})
+//    public void validateSession (String email, String password) throws InterruptedException {
+//        pruebasHumo.Login(email, password);
+//        pruebasRegresion.validateSession();
+//    }
     @Test(priority = 1)
     @Parameters({"email", "password"})
-    public void validateSession (String email, String password) throws InterruptedException {
+    public void validateLogin(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
-        pruebasRegresion.validateSession();
+        pruebasRegresion.validaLoginFunctionality(email,password);
     }
 }
