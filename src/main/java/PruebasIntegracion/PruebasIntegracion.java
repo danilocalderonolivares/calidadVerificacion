@@ -3,12 +3,12 @@ package PruebasIntegracion;
 import Base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class PruebasIntegracion extends BasePage {
 
     By selectBtn = By.xpath("//*[@id=\"a-autoid-0-announce\"]");
     By changeCoin = By.xpath("//*[@id=\"icp-sc-dropdown_63\"]");
-    By changeLanguageButton = By.id("icp-nav-flyout");
     By filterName = By.id("twotabsearchtextbox");
     By btnSearch = By.id("nav-search-submit-button");
     By article = By.xpath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[12]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span");
@@ -21,7 +21,8 @@ public class PruebasIntegracion extends BasePage {
     By addArticle = By.xpath("//*[@id=\"add-to-cart-button\"]");
     By verifyShop = By.xpath("//*[@id=\"nav-cart-text-container\"]/span[2]");
     By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
-
+    By changeLanguageButton = By.id("icp-nav-flyout");
+    By languageRadioButton;
     public PruebasIntegracion(WebDriver driver) {
         super(driver);
     }
@@ -35,14 +36,18 @@ public class PruebasIntegracion extends BasePage {
         Click(verifyShop);
     }
 
-    public void ChangeCoin() {
+    public void ChangeCoinLanguage(String expectedValue, String pathToText, String elementXpath) {
         Click(changeLanguageButton);
-        //Se debe enviar por parametro el idioma que se quiere o crealo en esta clase como variable global
-        //click(languageRadioButton); languageRadioButton = findElementByXpath(elementXpath);
+        languageRadioButton = FindElementByXpath(elementXpath);
+        Click(languageRadioButton);
         Click(selectBtn);
         Click(changeCoin);
         Click(saveChangesButton);
+
+        String valueToCompare = GetElementTextById(pathToText);
+        Assert.assertEquals(valueToCompare, expectedValue);
     }
+
 
     public void FilterArticle(String word) {
         Click(filterName);
@@ -51,5 +56,6 @@ public class PruebasIntegracion extends BasePage {
         Click(article);
         Click(shopCar);
         Click(verifyShopCar);
+        CleanInputs();
     }
 }

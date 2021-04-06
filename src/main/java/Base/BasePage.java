@@ -12,6 +12,7 @@ public class BasePage {
     By changeLanguageButton = By.id("icp-nav-flyout");
     By languageRadioButton;
     By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
+    By filterName = By.id("twotabsearchtextbox");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -66,4 +67,10 @@ public class BasePage {
     public WebDriver getDriver() {
         return driver;
     }
+
+    public  void CleanInputs(){
+        driver.findElement(filterName).clear();
+    }
+
+
 }

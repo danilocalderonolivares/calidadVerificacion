@@ -7,15 +7,22 @@
     <parameter name="email" value="jmadrigal_94@outlook.com"/>
     <parameter name="email" value="danilo_0271@hotmail.es"/>
     <parameter name="password" value="sanchez30.30"/>
-    <parameter name="emailFail" value="russellm434@gmail.com"/>
+    <parameter name="emailFail" value="russellm4x34@gmail.com"/>
     <parameter name="passwordFail" value="saffdv"/>
     <parameter name="Name" value="Automation Tester"/>
     <parameter name="emailNew" value="autotesterqa70@gmail.com"/>
     <parameter name="passwordNew" value="@tester1166TY"/>
     <parameter name="passwordConfirm" value="@tester1166TY"/>
-    <parameter name="NameArt" value="Ipad"/>
+    <parameter name="NameArt1" value="Ipad"/>
+    <parameter name="NameArt2" value="Ryzaen"/>
 
-    <test name="TestPruebasUnitarias">
+    <parameter name="NameFail" value="Test Fail Name"/>
+    <parameter name="emailNewFail" value="autotesterqa70@gmaixl.coxm"/>
+    <parameter name="passwordNewFail" value="Tester_666"/>
+    <parameter name="passwordConfirmFail" value="Tester_666"/>
+
+
+   <test name="TestPruebasUnitarias">
         <classes>
             <class name="PruebasUnitarias.TestPruebasUnitarias"/>
         </classes>
@@ -33,10 +40,11 @@
         </classes>
     </test>
 
-    <test name="TestPruebasHumo">
+ <!--   <test name="TestPruebasHumo">
         <classes>
             <class name="PruebasHumo.TestPruebasHumo"/>
         </classes>
+<<<<<<< HEAD
     </test>
 
     <test name="TestPruebasRegresion">
@@ -45,3 +53,7 @@
         </classes>
     </test>
 </suite>
+=======
+    </test>-->
+</suite>
+>>>>>>> 9def765a6fb62ab2eb17bea32f1349a558b6e769

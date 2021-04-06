@@ -41,5 +41,15 @@ public class PruebasUnitarias extends BasePage {
         SendKeys(passInput, passwordNew);
         SendKeys(passConfInput, passwordConfirm);
         Click(btnPass);
+
+    }
+    public void CreateAccountFail(String Name, String emailNew, String passwordNew, String passwordConfirm) {
+        Click(loginButton);
+        Click(createAccountButton);
+        SendKeys(nameInput, Name);
+        SendKeys(mailInput, emailNew);
+        SendKeys(passInput, passwordNew);
+        SendKeys(passConfInput, passwordConfirm);
+        Click(btnPass);
     }
 }

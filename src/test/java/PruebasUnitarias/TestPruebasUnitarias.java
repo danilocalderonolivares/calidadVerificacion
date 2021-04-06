@@ -15,6 +15,18 @@ public class TestPruebasUnitarias extends BaseTest {
     @Parameters({"Name", "emailNew", "passwordNew", "passwordConfirm"})
     @Test
     public void CreateAccount(String Name, String emailNew, String passwordNew, String passwordConfirm) {
-        //pruebasUnitarias.CreateAccount(Name, emailNew, passwordNew, passwordConfirm);
+        pruebasUnitarias.CreateAccount(Name, emailNew, passwordNew, passwordConfirm);
+        driver.navigate().to("https://www.amazon.com/");
+
     }
+
+    @Parameters({"NameFail", "emailNewFail", "passwordNewFail", "passwordConfirmFail"})
+    @Test
+    public void CreateAccountFail(String Name, String emailNew, String passwordNew, String passwordConfirm) {
+        pruebasUnitarias.CreateAccountFail(Name, emailNew, passwordNew, passwordConfirm);
+        driver.navigate().to("https://www.amazon.com/");
+
+    }
+
+
 }
