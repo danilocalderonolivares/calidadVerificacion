@@ -43,9 +43,9 @@ public class BaseTest {
 
     public void InitializeComponents() {
         basePage = new BasePage(driver);
-//        pruebasFuncionales = new PruebasFuncionales(driver);
-//        pruebasIntegracion = new PruebasIntegracion(driver);
-//        pruebasUnitarias = new PruebasUnitarias(driver);
+        pruebasFuncionales = new PruebasFuncionales(driver);
+        pruebasIntegracion = new PruebasIntegracion(driver);
+        pruebasUnitarias = new PruebasUnitarias(driver);
         pruebasHumo = new PruebasHumo(driver);
         pruebasRegresion =  new PruebasRegresion(driver);
     }

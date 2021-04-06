@@ -1,23 +1,19 @@
 package PruebasRegresion;
 
 import Base.BasePage;
-import PruebasHumo.PruebasHumo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PruebasRegresion extends BasePage {
     Logger logger = Logger.getLogger(PruebasRegresion.class.getName());
-    By loginButton = By.id("nav-link-accountList");
     By emailInput = By.id("ap_email");
     By continueButton = By.id("continue");
     By passwordInput = By.id("ap_password");
     By loginSubmitButton = By.id("signInSubmit");
-   By logoutBtn = FindElementByXpath("//*[@id=\"nav-item-signout\"]");
-   PruebasHumo pruebasHumo;
+    By logoutBtn = FindElementByXpath("//*[@id=\"nav-item-signout\"]");
     public PruebasRegresion(WebDriver driver) {
         super(driver);
     }
@@ -41,7 +37,7 @@ public class PruebasRegresion extends BasePage {
     /*
      Esta prueba valida la funcionalidad e integridad del inicio de sesion despues de cerrar sesion
      */
-    public  void  validaLoginFunctionality(String email, String password) throws InterruptedException {
+    public  void  validateLoginFunctionality(String email, String password) throws InterruptedException {
         logger.info("Iniciando prueba de regresesion");
         HoverElement("nav-link-accountList");
         Click(logoutBtn);
@@ -52,6 +48,9 @@ public class PruebasRegresion extends BasePage {
         Click(loginSubmitButton);
         logger.info("Existe el elemento hello ? : " + CheckElementExistsById("nav-link-accountList-nav-line-1"));
         Assert.assertTrue(CheckElementExistsById("nav-link-accountList-nav-line-1"));
+
+    }
+    public void checkallItems() {
 
     }
 }
