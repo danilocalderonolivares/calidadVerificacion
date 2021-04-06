@@ -40,11 +40,11 @@
         </classes>
     </test>
 
- <!--   <test name="TestPruebasHumo">
+    <test name="TestPruebasHumo">
         <classes>
             <class name="PruebasHumo.TestPruebasHumo"/>
         </classes>
-<<<<<<< HEAD
+
     </test>
 
     <test name="TestPruebasRegresion">
@@ -53,7 +53,6 @@
         </classes>
     </test>
 </suite>
-=======
-    </test>-->
-</suite>
->>>>>>> 9def765a6fb62ab2eb17bea32f1349a558b6e769
+
+
+
