@@ -5,7 +5,6 @@
     <!--Agregar una segunda cuenta para otro escenario de login exitoso-->
     <parameter name="URL" value="https://www.amazon.com/"/>
     <parameter name="email" value="jmadrigal_94@outlook.com"/>
-    <parameter name="email" value="danilo_0271@hotmail.es"/>
     <parameter name="password" value="sanchez30.30"/>
     <parameter name="emailFail" value="russellm4x34@gmail.com"/>
     <parameter name="passwordFail" value="saffdv"/>

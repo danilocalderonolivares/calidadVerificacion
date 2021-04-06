@@ -29,7 +29,7 @@ public class BaseTest {
     @BeforeClass
     public void TestSetUp(String URL) {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
+        options.addArguments("start-maximized", "--incognito");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(URL);
