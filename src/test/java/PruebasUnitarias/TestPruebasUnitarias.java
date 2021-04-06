@@ -12,21 +12,17 @@ public class TestPruebasUnitarias extends BaseTest {
         pruebasUnitarias.LoginFail(email, password);
     }
 
-    @Parameters({"Name", "emailNew", "passwordNew", "passwordConfirm"})
+    @Parameters({"Name", "emailNew", "passwordNew", "passwordConfirm", "URL"})
     @Test
-    public void CreateAccount(String Name, String emailNew, String passwordNew, String passwordConfirm) {
+    public void CreateAccount(String Name, String emailNew, String passwordNew, String passwordConfirm, String URL) {
         pruebasUnitarias.CreateAccount(Name, emailNew, passwordNew, passwordConfirm);
-        driver.navigate().to("https://www.amazon.com/");
-
+        driver.navigate().to(URL);
     }
 
-    @Parameters({"NameFail", "emailNewFail", "passwordNewFail", "passwordConfirmFail"})
+    @Parameters({"NameFail", "emailNewFail", "passwordNewFail", "passwordConfirmFail", "URL"})
     @Test
-    public void CreateAccountFail(String Name, String emailNew, String passwordNew, String passwordConfirm) {
+    public void CreateAccountFail(String Name, String emailNew, String passwordNew, String passwordConfirm, String URL) {
         pruebasUnitarias.CreateAccountFail(Name, emailNew, passwordNew, passwordConfirm);
-        driver.navigate().to("https://www.amazon.com/");
-
+        driver.navigate().to(URL);
     }
-
-
 }

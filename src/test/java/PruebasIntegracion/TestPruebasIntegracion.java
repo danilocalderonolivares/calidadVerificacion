@@ -10,13 +10,13 @@ public class TestPruebasIntegracion extends BaseTest {
     @Test
     public void MethodSetUpFilter1(String word) {
         pruebasIntegracion.FilterArticle(word);
-
     }
-    @Parameters({"NameArt2"})
+
+    @Parameters({"NameArt2", "URL"})
     @Test
-    public void MethodSetUpFilter2(String word) {
+    public void MethodSetUpFilter2(String word, String URL) {
         pruebasIntegracion.FilterArticle(word);
-        driver.navigate().to("https://www.amazon.com/");
+        driver.navigate().to(URL);
     }
 
     @Test

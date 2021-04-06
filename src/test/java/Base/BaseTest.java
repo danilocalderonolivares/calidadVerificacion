@@ -35,6 +35,7 @@ public class BaseTest {
         driver.get(URL);
         InitializeComponents();
     }
+
     @BeforeMethod
     public void methodLevelSetUp() {
     }
@@ -45,10 +46,10 @@ public class BaseTest {
         pruebasIntegracion = new PruebasIntegracion(driver);
         pruebasUnitarias = new PruebasUnitarias(driver);
         pruebasHumo = new PruebasHumo(driver);
-        pruebasRegresion =  new PruebasRegresion(driver);
+        pruebasRegresion = new PruebasRegresion(driver);
     }
 
-   @AfterClass
+    @AfterClass
     public void teardown() {
         driver.quit();
     }

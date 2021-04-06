@@ -15,14 +15,12 @@
     <parameter name="passwordConfirm" value="@tester1166TY"/>
     <parameter name="NameArt1" value="Ipad"/>
     <parameter name="NameArt2" value="Ryzaen"/>
-
     <parameter name="NameFail" value="Test Fail Name"/>
     <parameter name="emailNewFail" value="autotesterqa70@gmaixl.coxm"/>
     <parameter name="passwordNewFail" value="Tester_666"/>
     <parameter name="passwordConfirmFail" value="Tester_666"/>
 
-
-   <test name="TestPruebasUnitarias">
+    <test name="TestPruebasUnitarias">
         <classes>
             <class name="PruebasUnitarias.TestPruebasUnitarias"/>
         </classes>

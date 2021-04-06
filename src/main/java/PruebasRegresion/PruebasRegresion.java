@@ -14,14 +14,15 @@ public class PruebasRegresion extends BasePage {
     By passwordInput = By.id("ap_password");
     By loginSubmitButton = By.id("signInSubmit");
     By logoutBtn = FindElementByXpath("//*[@id=\"nav-item-signout\"]");
+
     public PruebasRegresion(WebDriver driver) {
         super(driver);
     }
 
     /*
-    Esta funcion prueba la persistencia de una sesion al dar click al boton logout
+    Esta funcion prueba la persistencia de una sesión al dar click al botón logout
      */
-    public void validateSession() throws InterruptedException {
+    public void ValidateSession() throws InterruptedException {
         logger.info("Iniciando prueba de regresesion");
         HoverElement("nav-link-accountList");
         Click(logoutBtn);
@@ -31,13 +32,14 @@ public class PruebasRegresion extends BasePage {
         getDriver().navigate().refresh();
         Thread.sleep(1500);
         logger.info("Existe el elemento singin : " + CheckElementExistsById("nav-flyout-ya-signin"));
+
         Assert.assertTrue(CheckElementExistsById("nav-flyout-ya-signin"));
     }
 
     /*
-     Esta prueba valida la funcionalidad e integridad del inicio de sesion despues de cerrar sesion
+     Esta prueba valida la funcionalidad e integridad del inicio de sesión despúes de cerrar sesión
      */
-    public  void  validateLoginFunctionality(String email, String password) throws InterruptedException {
+    public void ValidateLoginFunctionality(String email, String password) throws InterruptedException {
         logger.info("Iniciando prueba de regresesion");
         HoverElement("nav-link-accountList");
         Click(logoutBtn);
@@ -47,10 +49,7 @@ public class PruebasRegresion extends BasePage {
         SendKeys(passwordInput, password);
         Click(loginSubmitButton);
         logger.info("Existe el elemento hello ? : " + CheckElementExistsById("nav-link-accountList-nav-line-1"));
+
         Assert.assertTrue(CheckElementExistsById("nav-link-accountList-nav-line-1"));
-
-    }
-    public void checkallItems() {
-
     }
 }

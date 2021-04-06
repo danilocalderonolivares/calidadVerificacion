@@ -8,14 +8,15 @@ public class TestPruebasRegresion extends BaseTest {
 
     @Test(priority = 1)
     @Parameters({"email", "password"})
-    public void validateSession (String email, String password) throws InterruptedException {
+    public void validateSession(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
-        pruebasRegresion.validateSession();
+        pruebasRegresion.ValidateSession();
     }
+
     @Test(priority = 2)
     @Parameters({"email", "password"})
     public void validateLogin(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
-        pruebasRegresion.validateLoginFunctionality(email,password);
+        pruebasRegresion.ValidateLoginFunctionality(email, password);
     }
 }

@@ -23,6 +23,7 @@ public class PruebasIntegracion extends BasePage {
     By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
     By changeLanguageButton = By.id("icp-nav-flyout");
     By languageRadioButton;
+
     public PruebasIntegracion(WebDriver driver) {
         super(driver);
     }
@@ -48,7 +49,6 @@ public class PruebasIntegracion extends BasePage {
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 
-
     public void FilterArticle(String word) {
         Click(filterName);
         SendKeys(filterName, word);
@@ -56,6 +56,6 @@ public class PruebasIntegracion extends BasePage {
         Click(article);
         Click(shopCar);
         Click(verifyShopCar);
-        CleanInputs();
+        CleanInputs("twotabsearchtextbox");
     }
 }
