@@ -14,6 +14,7 @@ public class PruebasRegresion extends BasePage {
     By passwordInput = By.id("ap_password");
     By loginSubmitButton = By.id("signInSubmit");
     By logoutBtn = FindElementByXpath("//*[@id=\"nav-item-signout\"]");
+    By cardBtn = FindElementByXpath("//*[@id=\"nav-cart\"]");
 
     public PruebasRegresion(WebDriver driver) {
         super(driver);
@@ -32,24 +33,30 @@ public class PruebasRegresion extends BasePage {
         getDriver().navigate().refresh();
         Thread.sleep(1500);
         logger.info("Existe el elemento singin : " + CheckElementExistsById("nav-flyout-ya-signin"));
-
         Assert.assertTrue(CheckElementExistsById("nav-flyout-ya-signin"));
     }
 
     /*
      Esta prueba valida la funcionalidad e integridad del inicio de sesión despúes de cerrar sesión
      */
-    public void ValidateLoginFunctionality(String email, String password) throws InterruptedException {
-        logger.info("Iniciando prueba de regresesion");
-        HoverElement("nav-link-accountList");
-        Click(logoutBtn);
-        Thread.sleep(1500);
-        SendKeys(emailInput, email);
-        Click(continueButton);
-        SendKeys(passwordInput, password);
-        Click(loginSubmitButton);
-        logger.info("Existe el elemento hello ? : " + CheckElementExistsById("nav-link-accountList-nav-line-1"));
-
-        Assert.assertTrue(CheckElementExistsById("nav-link-accountList-nav-line-1"));
-    }
+//    public void ValidateLoginFunctionality(String email, String password) throws InterruptedException {
+//        logger.info("Iniciando prueba de regresesion");
+//        HoverElement("nav-link-accountList");
+//        Click(this.logoutBtn);
+//        Thread.sleep(1500);
+//        SendKeys(emailInput, email);
+//        Click(continueButton);
+//        SendKeys(passwordInput, password);
+//        Click(loginSubmitButton);
+//        logger.info("Existe el elemento hello ? : " + CheckElementExistsById("nav-link-accountList-nav-line-1"));
+//        Assert.assertTrue(CheckElementExistsById("nav-link-accountList-nav-line-1"));
+//    }
+    /*
+       Esta prueba valida la persistencia de los productos/items que se agregan al carrito
+     */
+//    public void checkAllItems () throws InterruptedException {
+//        logger.info("Iniciando prueba de regresesion ver historial");
+//        Click(this.cardBtn);
+//        Thread.sleep(1500);
+//    }
 }
