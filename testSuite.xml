@@ -21,11 +21,11 @@
     <parameter name="passwordNewFail" value="Tester_666"/>
     <parameter name="passwordConfirmFail" value="Tester_666"/>
 
-    <test name="TestPruebasUnitarias">
-        <classes>
-            <class name="PruebasUnitarias.TestPruebasUnitarias"/>
-        </classes>
-    </test>
+<!--    <test name="TestPruebasUnitarias">-->
+<!--        <classes>-->
+<!--            <class name="PruebasUnitarias.TestPruebasUnitarias"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="TestPruebasFuncionales">
         <classes>
@@ -33,11 +33,11 @@
         </classes>
     </test>
 
-    <test name="TestPruebasIntegracion">
-        <classes>
-            <class name="PruebasIntegracion.TestPruebasIntegracion"/>
-        </classes>
-    </test>
+<!--    <test name="TestPruebasIntegracion">-->
+<!--        <classes>-->
+<!--            <class name="PruebasIntegracion.TestPruebasIntegracion"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="TestPruebasHumo">
         <classes>
