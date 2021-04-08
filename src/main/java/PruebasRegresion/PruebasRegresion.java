@@ -21,7 +21,7 @@ public class PruebasRegresion extends BasePage {
     By searchButton = By.id("nav-search-submit-button");
     By addToCartButton = By.id("add-to-cart-button");
     By myCartButton = By.id("nav-cart");
-
+//    By deleteExample = By.
 
     public PruebasRegresion(WebDriver driver) {
         super(driver);
