@@ -4,10 +4,8 @@
 
     <!--Agregar una segunda cuenta para otro escenario de login exitoso-->
     <parameter name="URL" value="https://www.amazon.com/"/>
-<!--    <parameter name="email" value="jmadrigal_94@outlook.com"/>-->
-    <parameter name="email" value="danilo_0271@hotmail.es"/>
-<!--    <parameter name="password" value="sanchez30.30"/>-->
-    <parameter name="password" value="d@nilocalderon93"/>
+    <parameter name="email" value="jmadrigal_94@outlook.com"/>
+    <parameter name="password" value="sanchez30.30"/>
     <parameter name="emailFail" value="russellm4x34@gmail.com"/>
     <parameter name="passwordFail" value="saffdv"/>
     <parameter name="Name" value="Automation Tester"/>
@@ -21,11 +19,11 @@
     <parameter name="passwordNewFail" value="Tester_666"/>
     <parameter name="passwordConfirmFail" value="Tester_666"/>
 
-<!--    <test name="TestPruebasUnitarias">-->
-<!--        <classes>-->
-<!--            <class name="PruebasUnitarias.TestPruebasUnitarias"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="TestPruebasUnitarias">
+        <classes>
+            <class name="PruebasUnitarias.TestPruebasUnitarias"/>
+        </classes>
+    </test>
 
     <test name="TestPruebasFuncionales">
         <classes>
@@ -33,11 +31,11 @@
         </classes>
     </test>
 
-<!--    <test name="TestPruebasIntegracion">-->
-<!--        <classes>-->
-<!--            <class name="PruebasIntegracion.TestPruebasIntegracion"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="TestPruebasIntegracion">
+        <classes>
+            <class name="PruebasIntegracion.TestPruebasIntegracion"/>
+        </classes>
+    </test>
 
     <test name="TestPruebasHumo">
         <classes>
