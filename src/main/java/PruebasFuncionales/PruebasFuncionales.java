@@ -50,6 +50,6 @@ public class PruebasFuncionales extends BasePage {
 
         Thread.sleep(1500);
         String valueToCompare = GetElementTextById(itemPath);
-//        Assert.assertEquals(valueToCompare, expectedValue);
+        Assert.assertEquals(valueToCompare, expectedValue);
     }
 }
