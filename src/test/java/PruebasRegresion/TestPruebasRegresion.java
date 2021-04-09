@@ -10,21 +10,21 @@ import java.util.List;
 
 public class TestPruebasRegresion extends BaseTest {
     public List<Item> items = new ArrayList<>();
-//    @Test(priority = 1)
-//    @Parameters({"email", "password"})
-//    public void validateSession(String email, String password) throws InterruptedException {
-//        pruebasHumo.Login(email, password);
-//        pruebasRegresion.ValidateSession();
-//    }
-//
-//    @Test(priority = 2)
-//    @Parameters({"email", "password"})
-//    public void validateLogin(String email, String password) throws InterruptedException {
-//        pruebasHumo.Login(email, password);
-//        pruebasRegresion.ValidateLoginFunctionality(email, password);
-//    }
-
     @Test(priority = 1)
+    @Parameters({"email", "password"})
+    public void validateSession(String email, String password) throws InterruptedException {
+        pruebasHumo.Login(email, password);
+        pruebasRegresion.ValidateSession();
+    }
+
+    @Test(priority = 2)
+    @Parameters({"email", "password"})
+    public void validateLogin(String email, String password) throws InterruptedException {
+        pruebasHumo.Login(email, password);
+        pruebasRegresion.ValidateLoginFunctionality(email, password);
+    }
+
+    @Test(priority = 3)
     @Parameters({"email", "password"})
     public void checkItemList(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
@@ -34,7 +34,7 @@ public class TestPruebasRegresion extends BaseTest {
         items.add(item2);
         pruebasRegresion.checkAllItems(items);
     }
-    @Test(priority = 2)
+    @Test(priority = 4)
     public void deleteItem() throws InterruptedException {
         pruebasRegresion.checkPersistenceAfterDeleteItem();
     }
