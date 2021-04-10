@@ -43,7 +43,6 @@
         <classes>
             <class name="PruebasHumo.TestPruebasHumo"/>
         </classes>
-
     </test>
 
     <test name="TestPruebasRegresion">
