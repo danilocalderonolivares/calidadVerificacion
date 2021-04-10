@@ -78,18 +78,6 @@ public class PruebasRegresion extends BasePage {
         logger.info("Existe el elemento la lista de items ? : " + CheckElementExistsById("deselect-all"));
         Assert.assertTrue(CheckElementExistsById("deselect-all"));
     }
-    public void checkPersistenceAfterDeleteItem() throws InterruptedException {
-        this.idItem = getDriver().findElement(By.xpath("//div[@data-item-count='1']")).getAttribute("data-itemid");
-        this.deleteBtnXpath = "//input[@name="+'\'' +this.deleteBtnXpath + this.idItem+'\'' +"]";
-        logger.info("Info del xpth" + deleteBtnXpath);
-        Click(FindElementByXpath(deleteBtnXpath));
-        Thread.sleep(4500);
-        getDriver().navigate().refresh();
-        Thread.sleep(1500);
-        logger.info("Existe el item elimnado " + this.CheckElmentExistByXpath(this.deleteBtnXpath));
-        Assert.assertFalse(this.CheckElmentExistByXpath(this.deleteBtnXpath));
-
-    }
 
     public void checkPersistenceAfterDeleteItem() throws InterruptedException {
         this.idItem = getDriver().findElement(By.xpath("//div[@data-item-count='1']")).getAttribute("data-itemid");

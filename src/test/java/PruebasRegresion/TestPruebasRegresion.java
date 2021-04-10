@@ -31,7 +31,7 @@ public class TestPruebasRegresion extends BaseTest {
     public void checkItemList(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
         Item item1 = new Item("Asus laptop", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
-        Item item2 = new Item("Iphone", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
+        Item item2 = new Item("headsets","//img[contains(@class, 's-image')][1]", "nav-cart-count");
         items.add(item1);
         items.add(item2);
         pruebasRegresion.checkAllItems(items);
