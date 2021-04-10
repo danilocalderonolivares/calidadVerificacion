@@ -14,30 +14,30 @@ public class TestPruebasRegresion extends BaseTest {
 
     @Test(priority = 1)
     @Parameters({"email", "password"})
-    public void validateSession(String email, String password) throws InterruptedException {
+    public void ValidateSession(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
         pruebasRegresion.ValidateSession();
     }
 
     @Test(priority = 2)
     @Parameters({"email", "password"})
-    public void validateLogin(String email, String password) throws InterruptedException {
+    public void ValidateLogin(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
         pruebasRegresion.ValidateLoginFunctionality(email, password);
     }
 
     @Test(priority = 3)
     @Parameters({"email", "password"})
-    public void checkItemList(String email, String password) throws InterruptedException {
+    public void CheckItemList(String email, String password) throws InterruptedException {
         Item item1 = new Item("Asus laptop", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
-        Item item2 = new Item("headsets","//img[contains(@class, 's-image')][1]", "nav-cart-count");
+        Item item2 = new Item("headsets", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
         items.add(item1);
         items.add(item2);
-        pruebasRegresion.checkAllItems(items);
+        pruebasRegresion.CheckAllItems(items);
     }
 
     @Test(priority = 4)
-    public void deleteItem() throws InterruptedException {
-        pruebasRegresion.checkPersistenceAfterDeleteItem();
+    public void DeleteItem() throws InterruptedException {
+        pruebasRegresion.CheckPersistenceAfterDeleteItem();
     }
 }

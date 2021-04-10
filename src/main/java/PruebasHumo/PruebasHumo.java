@@ -60,8 +60,8 @@ public class PruebasHumo extends BasePage {
 
     public void ClickMyAccountButtonWorksCorrectly(String email, String password, String expectedValue) throws InterruptedException {
         Click(loginButton);
-
         Thread.sleep(3000);
+
         String valueToCompare = GetElementTextByCssSelector("#a-page > div.a-container > div > div.a-row.a-spacing-base > h1");
         Assert.assertEquals(valueToCompare, expectedValue);
     }

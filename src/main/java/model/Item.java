@@ -5,14 +5,10 @@ public class Item {
     String itemPath;
     String itemXpath;
 
-    public Item() {
-    }
-
-    public Item(String itemName, String itemXpath,String itemPath) {
+    public Item(String itemName, String itemXpath, String itemPath) {
         this.itemName = itemName;
         this.itemXpath = itemXpath;
         this.itemPath = itemPath;
-
     }
 
     public String getItemName() {
