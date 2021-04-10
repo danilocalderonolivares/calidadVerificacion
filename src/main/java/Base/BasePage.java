@@ -12,6 +12,7 @@ public class BasePage {
     By changeLanguageButton = By.id("icp-nav-flyout");
     By languageRadioButton;
     By saveChangesButton = By.xpath("//*[@id='icp-btn-save']/span/input");
+    By logoutButton = FindElementByXpath("//*[@id=\"nav-item-signout\"]");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -69,5 +70,15 @@ public class BasePage {
 
     public void CleanInputs(String filterName) {
         driver.findElement(By.id(filterName)).clear();
+    }
+
+    public void Logout() throws InterruptedException {
+        HoverElement("nav-link-accountList");
+        Click(logoutButton);
+        Thread.sleep(2000);
+    }
+
+    public boolean CheckElementExistsByXpath(String xpath) {
+        return !driver.findElements(By.xpath(xpath)).isEmpty();
     }
 }

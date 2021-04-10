@@ -15,7 +15,7 @@ public class PruebasIntegracion extends BasePage {
     By shopCar = By.xpath("//*[@id=\"add-to-cart-button\"]");
     By verifyShopCar = By.xpath("//*[@id=\"nav-cart\"]");
     By btnMenu = By.xpath("//*[@id=\"nav-hamburger-menu\"]/span");
-    By optionMenu1 = By.xpath("//*[@id=\"hmenu-content\"]/ul[1]/li[7]/a");
+    By optionMenu1 = By.xpath("//*[@id=\"hmenu-content\"]/ul[1]/li[7]");
     By optionMenu2 = By.xpath("//*[@id=\"hmenu-content\"]/ul[5]/li[4]/a");
     By articleCam = By.xpath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[2]/div/span/div/div/div[2]/h2/a/span");
     By addArticle = By.xpath("//*[@id=\"add-to-cart-button\"]");
@@ -28,9 +28,11 @@ public class PruebasIntegracion extends BasePage {
         super(driver);
     }
 
-    public void FilterByArticle() {
+    public void FilterByArticle() throws InterruptedException {
         Click(btnMenu);
+        Thread.sleep(2000);
         Click(optionMenu1);
+        Thread.sleep(2000);
         Click(optionMenu2);
         Click(articleCam);
         Click(addArticle);
@@ -49,11 +51,12 @@ public class PruebasIntegracion extends BasePage {
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 
-    public void FilterArticle(String word) {
+    public void FilterArticle(String word) throws InterruptedException {
         Click(filterName);
         SendKeys(filterName, word);
         Click(btnSearch);
         Click(article);
+        Thread.sleep(2000);
         Click(shopCar);
         Click(verifyShopCar);
         CleanInputs("twotabsearchtextbox");

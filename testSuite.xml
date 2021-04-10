@@ -2,10 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-    <!--Agregar una segunda cuenta para otro escenario de login exitoso-->
     <parameter name="URL" value="https://www.amazon.com/"/>
     <parameter name="email" value="jmadrigal_94@outlook.com"/>
     <parameter name="password" value="sanchez30.30"/>
+    <parameter name="email2" value="danilo_0271@hotmail.es"/>
+    <parameter name="password2" value="estudiantedanilo1234"/>
     <parameter name="emailFail" value="russellm4x34@gmail.com"/>
     <parameter name="passwordFail" value="saffdv"/>
     <parameter name="Name" value="Automation Tester"/>
@@ -18,6 +19,7 @@
     <parameter name="emailNewFail" value="autotesterqa70@gmaixl.coxm"/>
     <parameter name="passwordNewFail" value="Tester_666"/>
     <parameter name="passwordConfirmFail" value="Tester_666"/>
+    <parameter name="loginFailText" value="We cannot find an account with that email address"/>
 
     <test name="TestPruebasUnitarias">
         <classes>

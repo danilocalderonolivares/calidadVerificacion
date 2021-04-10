@@ -20,9 +20,9 @@ public class TestPruebasUnitarias extends BaseTest {
         driver.navigate().to(URL);
     }
 
-    /*@Parameters({"emailFail", "passwordFail"})
+    @Parameters({"emailFail", "loginFailText"})
     @Test(priority = 3)
-    public void LoginFail(String email, String password) {
-        pruebasUnitarias.LoginFail(email, password);
-    }*/
+    public void LoginFail(String email, String loginFailText) {
+        pruebasUnitarias.LoginFail(email, loginFailText, "//span[@class='a-list-item']");
+    }
 }

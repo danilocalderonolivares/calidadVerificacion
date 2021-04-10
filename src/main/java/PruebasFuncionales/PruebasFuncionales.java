@@ -31,8 +31,9 @@ public class PruebasFuncionales extends BasePage {
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 
-    public void CheckOrders(String expectedValue, String pathToText) {
+    public void CheckOrders(String expectedValue, String pathToText) throws InterruptedException {
         Click(myAccountButton);
+        Thread.sleep(2000);
         Click(myOrdersButton);
 
         String valueToCompare = GetElementTextByCssSelector(pathToText);
@@ -46,6 +47,7 @@ public class PruebasFuncionales extends BasePage {
         By firstItem = By.xpath(itemXpath);
         Click(firstItem);
         Click(addToCartButton);
+        Thread.sleep(1500);
         Click(myCartButton);
 
         Thread.sleep(1500);

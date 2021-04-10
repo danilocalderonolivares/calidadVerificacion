@@ -8,7 +8,7 @@ public class TestPruebasFuncionales extends BaseTest {
 
     @Test(priority = 1)
     @Parameters({"email", "password"})
-    public void ChangeLanguageToGerman(String email, String password) {
+    public void ChangeLanguageToGerman(String email, String password) throws InterruptedException {
         pruebasHumo.Login(email, password);
         pruebasFuncionales.ChangeLanguage("Alle", "nav-search-label-id", "//span[contains(text(),'Deutsch - DE')]");
     }
@@ -19,23 +19,27 @@ public class TestPruebasFuncionales extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void CheckOrdersSpanish() {
+    public void CheckOrdersSpanish() throws InterruptedException {
         pruebasFuncionales.CheckOrders("Tus pedidos", "#yourOrdersContent > div.a-row > div:nth-child(1) > h1");
     }
 
     @Test(priority = 4)
-    public void CheckOrdersEnglish() {
+    @Parameters({"URL"})
+    public void CheckOrdersEnglish(String URL) throws InterruptedException {
         basePage.SetDefaultLanguage();
         pruebasFuncionales.CheckOrders("Your Orders", "#yourOrdersContent > div.a-row > div:nth-child(1) > h1");
+        basePage.Logout();
+        driver.navigate().to(URL);
+        Thread.sleep(2000);
     }
 
     @Test(priority = 5)
     public void AddItemToCart() throws InterruptedException {
-        pruebasFuncionales.AddItemToCart("Asus laptop", "1", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
+        pruebasFuncionales.AddItemToCart("SSD DRIVE", "1", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
     }
 
     @Test(priority = 6)
     public void AddAnotherItemToCart() throws InterruptedException {
-        pruebasFuncionales.AddItemToCart("Iphone", "2", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
+        pruebasFuncionales.AddItemToCart("USB", "2", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
     }
 }

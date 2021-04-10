@@ -6,27 +6,27 @@ import Base.BaseTest;
 
 public class TestPruebasIntegracion extends BaseTest {
 
-    @Parameters({"NameArt1"})
-    @Test
-    public void MethodSetUpFilter1(String word) {
-        pruebasIntegracion.FilterArticle(word);
-    }
-
-    @Parameters({"NameArt2", "URL"})
-    @Test
-    public void MethodSetUpFilter2(String word, String URL) {
-        pruebasIntegracion.FilterArticle(word);
-        driver.navigate().to(URL);
-    }
-
-    @Test
+    @Test(priority = 1)
     @Parameters({"email", "password"})
     public void ChangeCoin() {
         pruebasIntegracion.ChangeCoinLanguage("Alle", "nav-search-label-id", "//span[contains(text(),'Deutsch - DE')]");
     }
 
-    @Test
-    public void FilterByArticle() {
+    @Test(priority = 2)
+    public void FilterByArticle() throws InterruptedException {
         pruebasIntegracion.FilterByArticle();
+    }
+
+    @Parameters({"NameArt1"})
+    @Test(priority = 3)
+    public void MethodSetUpFilter1(String word) throws InterruptedException {
+        pruebasIntegracion.FilterArticle(word);
+    }
+
+    @Parameters({"NameArt2", "URL"})
+    @Test(priority = 4)
+    public void MethodSetUpFilter2(String word, String URL) throws InterruptedException {
+        pruebasIntegracion.FilterArticle(word);
+        driver.navigate().to(URL);
     }
 }

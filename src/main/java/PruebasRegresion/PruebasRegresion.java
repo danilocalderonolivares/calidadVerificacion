@@ -21,7 +21,8 @@ public class PruebasRegresion extends BasePage {
     By searchButton = By.id("nav-search-submit-button");
     By addToCartButton = By.id("add-to-cart-button");
     By myCartButton = By.id("nav-cart");
-
+    String deleteBtnXpath = "submit.delete.";
+    String idItem;
 
     public PruebasRegresion(WebDriver driver) {
         super(driver);
@@ -78,4 +79,13 @@ public class PruebasRegresion extends BasePage {
         Assert.assertTrue(CheckElementExistsById("deselect-all"));
     }
 
+    public void checkPersistenceAfterDeleteItem() throws InterruptedException {
+        this.idItem = getDriver().findElement(By.xpath("//div[@data-item-count='1']")).getAttribute("data-itemid");
+        this.deleteBtnXpath = "//input[@name="+'\'' +this.deleteBtnXpath + this.idItem+'\'' +"]";
+        Click(FindElementByXpath(deleteBtnXpath));
+        Thread.sleep(4500);
+        getDriver().navigate().refresh();
+        Thread.sleep(1500);
+        Assert.assertFalse(this.CheckElementExistsByXpath(this.deleteBtnXpath));
+    }
 }

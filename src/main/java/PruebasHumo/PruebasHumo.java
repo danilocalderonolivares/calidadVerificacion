@@ -26,12 +26,13 @@ public class PruebasHumo extends BasePage {
         SendKeys(passwordInput, password);
         Click(loginSubmitButton);
 
-        String valueToCompare = GetElementTextByCssSelector("#nav-xshop > a:nth-child(8)");
+        String valueToCompare = GetElementTextById("nav-link-accountList-nav-line-1");
         Assert.assertEquals(valueToCompare, expectedValue);
     }
 
-    public void Login(String email, String password) {
+    public void Login(String email, String password) throws InterruptedException {
         Click(loginButton);
+        Thread.sleep(2000);
         SendKeys(emailInput, email);
         Click(continueButton);
         SendKeys(passwordInput, password);
