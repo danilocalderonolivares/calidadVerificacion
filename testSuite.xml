@@ -3,8 +3,8 @@
 <suite name="Suite">
 
     <!--               Credenciales aquí                  -->
-    <parameter name="email" value=""/>
-    <parameter name="password" value=""/>
+    <parameter name="email" value="jmadrigal_94@outlook.com"/>
+    <parameter name="password" value="sanchez30.30"/>
     <parameter name="email2" value=""/>
     <parameter name="password2" value=""/>
     <!--               Credenciales aquí                  -->
