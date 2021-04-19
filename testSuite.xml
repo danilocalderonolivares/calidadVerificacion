@@ -5,8 +5,8 @@
     <!--               Credenciales aquí                  -->
     <parameter name="email" value="jmadrigal_94@outlook.com"/>
     <parameter name="password" value="sanchez30.30"/>
-    <parameter name="email2" value=""/>
-    <parameter name="password2" value=""/>
+    <parameter name="email2" value="danilo_0271@hotmail.es"/>
+    <parameter name="password2" value="estudiantedanilo1234"/>
     <!--               Credenciales aquí                  -->
 
     <parameter name="URL" value="https://www.amazon.com/"/>
