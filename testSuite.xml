@@ -18,6 +18,9 @@
     <parameter name="passwordConfirm" value="@tester1166TY"/>
     <parameter name="NameArt1" value="Ipad"/>
     <parameter name="NameArt2" value="Ryzaen"/>
+    <parameter name="NameArt3" value="Asus"/>
+    <parameter name="NameArt4" value="Iphone"/>
+
     <parameter name="NameFail" value="Test Fail Name"/>
     <parameter name="emailNewFail" value="autotesterqa70@gmaixl.coxm"/>
     <parameter name="passwordNewFail" value="Tester_666"/>
@@ -29,7 +32,6 @@
             <class name="PruebasUnitarias.TestPruebasUnitarias"/>
         </classes>
     </test>
-
     <test name="TestPruebasFuncionales">
         <classes>
             <class name="PruebasFuncionales.TestPruebasFuncionales"/>

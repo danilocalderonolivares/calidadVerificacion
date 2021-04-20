@@ -17,6 +17,9 @@ public class PruebasIntegracion extends BasePage {
     By btnMenu = By.xpath("//*[@id=\"nav-hamburger-menu\"]/span");
     By optionMenu1 = By.xpath("//*[@id=\"hmenu-content\"]/ul[1]/li[7]");
     By optionMenu2 = By.xpath("//*[@id=\"hmenu-content\"]/ul[5]/li[4]/a");
+    By optionMenu3 = By.xpath("//*[@id=\"hmenu-content\"]/ul[5]/li[4]/a");
+    By optionMenu4 = By.xpath("//*[@id=\"hmenu-content\"]/ul[5]/li[4]/a");
+
     By articleCam = By.xpath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[2]/div/span/div/div/div[2]/h2/a/span");
     By addArticle = By.xpath("//*[@id=\"add-to-cart-button\"]");
     By verifyShop = By.xpath("//*[@id=\"nav-cart-text-container\"]/span[2]");
@@ -29,6 +32,16 @@ public class PruebasIntegracion extends BasePage {
     }
 
     public void FilterByArticle() throws InterruptedException {
+        Click(btnMenu);
+        Thread.sleep(2000);
+        Click(optionMenu1);
+        Thread.sleep(2000);
+        Click(optionMenu2);
+        Click(articleCam);
+        Click(addArticle);
+        Click(verifyShop);
+    }
+    public void FilterByArticle2() throws InterruptedException {
         Click(btnMenu);
         Thread.sleep(2000);
         Click(optionMenu1);
@@ -56,9 +69,9 @@ public class PruebasIntegracion extends BasePage {
         SendKeys(filterName, word);
         Click(btnSearch);
         Click(article);
+        CleanInputs("twotabsearchtextbox");
         Thread.sleep(2000);
         Click(shopCar);
         Click(verifyShopCar);
-        CleanInputs("twotabsearchtextbox");
     }
 }
