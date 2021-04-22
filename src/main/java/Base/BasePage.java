@@ -56,6 +56,7 @@ public class BasePage {
     public boolean CheckElementExistsById(String id) {
         return !driver.findElements(By.id(id)).isEmpty();
     }
+
     public boolean CheckElmentExistByXpath(String xpath) {
         return !driver.findElements(By.xpath(xpath)).isEmpty();
     }
