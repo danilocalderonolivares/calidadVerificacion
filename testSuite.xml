@@ -2,11 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-    <parameter name="URL" value="https://www.amazon.com/"/>
+    <!--               Credenciales aquí                  -->
     <parameter name="email" value="jmadrigal_94@outlook.com"/>
     <parameter name="password" value="sanchez30.30"/>
     <parameter name="email2" value="danilo_0271@hotmail.es"/>
     <parameter name="password2" value="estudiantedanilo1234"/>
+    <!--               Credenciales aquí                  -->
+
+    <parameter name="URL" value="https://www.amazon.com/"/>
     <parameter name="emailFail" value="russellm4x34@gmail.com"/>
     <parameter name="passwordFail" value="saffdv"/>
     <parameter name="Name" value="Automation Tester"/>
@@ -15,6 +18,9 @@
     <parameter name="passwordConfirm" value="@tester1166TY"/>
     <parameter name="NameArt1" value="Ipad"/>
     <parameter name="NameArt2" value="Ryzaen"/>
+    <parameter name="NameArt3" value="Asus"/>
+    <parameter name="NameArt4" value="Iphone"/>
+
     <parameter name="NameFail" value="Test Fail Name"/>
     <parameter name="emailNewFail" value="autotesterqa70@gmaixl.coxm"/>
     <parameter name="passwordNewFail" value="Tester_666"/>
@@ -26,7 +32,6 @@
             <class name="PruebasUnitarias.TestPruebasUnitarias"/>
         </classes>
     </test>
-
     <test name="TestPruebasFuncionales">
         <classes>
             <class name="PruebasFuncionales.TestPruebasFuncionales"/>
@@ -50,6 +55,7 @@
             <class name="PruebasRegresion.TestPruebasRegresion"/>
         </classes>
     </test>
+
 </suite>
 
 
