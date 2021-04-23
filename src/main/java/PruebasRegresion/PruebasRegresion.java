@@ -14,14 +14,19 @@ public class PruebasRegresion extends BasePage {
     By passwordInput = By.id("ap_password");
     By loginSubmitButton = By.id("signInSubmit");
     By logoutBtn = FindElementByXpath("//*[@id=\"nav-item-signout\"]");
+    By accountBtn = FindElementByXpath("//*[@id=\"nav-al-your-account\"]/a[1]/span");
+    By orders = FindElementByXpath("//*[@id=\"a-page\"]/div[2]/div/div[2]/div[1]/a");
+    By dropDown = FindElementByXpath("//*[@id=\"a-autoid-1-announce\"]/span");
+    By dropDownbtn = By.id("orderFilter_6");
     By cardBtn = FindElementByXpath("//*[@id=\"nav-cart\"]");
     By searchBar = By.id("twotabsearchtextbox");
     By searchButton = By.id("nav-search-submit-button");
     By addToCartButton = By.id("add-to-cart-button");
     By myCartButton = By.id("nav-cart");
+    By seeItemInformationbtn = By.id("a-autoid-1-announce");
+    By buyAgainBtn = By.id("a-autoid-0");
     String deleteBtnXpath = "submit.delete.";
     String idItem;
-
     public PruebasRegresion(WebDriver driver) {
         super(driver);
     }
@@ -74,7 +79,23 @@ public class PruebasRegresion extends BasePage {
         Thread.sleep(4500);
         getDriver().navigate().refresh();
         Thread.sleep(1500);
-
         Assert.assertFalse(this.CheckElementExistsByXpath(this.deleteBtnXpath));
+    }
+    public void seePurchasesRecord() throws InterruptedException {
+        HoverElement("nav-link-accountList");
+        Click(this.accountBtn);
+        Click(this.orders);
+        Thread.sleep(1500);
+        Click(this.dropDown);
+        Thread.sleep(1500);
+        Click(this.dropDownbtn);
+        Assert.assertTrue(CheckElementExistsById("a-autoid-1-announce"));
+        Thread.sleep(1500);
+    }
+    public void seeItemInformation() throws InterruptedException {
+        Click(this.seeItemInformationbtn);
+        Assert.assertTrue(CheckElementExistsById("a-autoid-0"));
+        Thread.sleep(1500);
+
     }
 }

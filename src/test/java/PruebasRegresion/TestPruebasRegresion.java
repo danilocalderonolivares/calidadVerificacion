@@ -27,10 +27,9 @@ public class TestPruebasRegresion extends BaseTest {
     }
 
     @Test(priority = 3)
-    @Parameters({"email", "password"})
-    public void CheckItemList(String email, String password) throws InterruptedException {
-        Item item1 = new Item("Asus laptop", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
-        Item item2 = new Item("headsets", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
+    public void CheckItemList() throws InterruptedException {
+        Item item1 = new Item("Docker", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
+        Item item2 = new Item("java", "//img[contains(@class, 's-image')][1]", "nav-cart-count");
         items.add(item1);
         items.add(item2);
         pruebasRegresion.CheckAllItems(items);
@@ -39,5 +38,13 @@ public class TestPruebasRegresion extends BaseTest {
     @Test(priority = 4)
     public void DeleteItem() throws InterruptedException {
         pruebasRegresion.CheckPersistenceAfterDeleteItem();
+    }
+    @Test(priority = 5)
+    public void seeHistory() throws InterruptedException {
+        pruebasRegresion.seePurchasesRecord();
+    }
+    @Test(priority = 6)
+    public void seeItemInformacion() throws InterruptedException{
+            pruebasRegresion.seeItemInformation();
     }
 }
