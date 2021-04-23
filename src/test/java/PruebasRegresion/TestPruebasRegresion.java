@@ -40,10 +40,11 @@ public class TestPruebasRegresion extends BaseTest {
         pruebasRegresion.CheckPersistenceAfterDeleteItem();
     }
     @Test(priority = 5)
-    @Parameters({"email", "password"})
-    public void seeHistory(String email, String password) throws InterruptedException {
-//        pruebasHumo.Login(email, password);
+    public void seeHistory() throws InterruptedException {
         pruebasRegresion.seePurchasesRecord();
     }
-
+    @Test(priority = 6)
+    public void seeItemInformacion() throws InterruptedException{
+            pruebasRegresion.seeItemInformation();
+    }
 }
