@@ -14,7 +14,7 @@ public class PruebasUnitarias extends BasePage {
     By mailInput = By.id("ap_email");
     By passInput = By.id("ap_password");
     By passConfInput = By.id("ap_password_check");
-    By btnPass = By.xpath("//*[@id=\"continue\"]");
+    By passButton = By.xpath("//*[@id=\"continue\"]");
     By loginButton = By.id("nav-link-accountList");
 
     public PruebasUnitarias(WebDriver driver) {
@@ -37,7 +37,7 @@ public class PruebasUnitarias extends BasePage {
         SendKeys(mailInput, emailNew);
         SendKeys(passInput, passwordNew);
         SendKeys(passConfInput, passwordConfirm);
-        Click(btnPass);
+        Click(passButton);
     }
 
     public void CreateAccountFail(String Name, String emailNew, String passwordNew, String passwordConfirm) {
@@ -47,6 +47,6 @@ public class PruebasUnitarias extends BasePage {
         SendKeys(mailInput, emailNew);
         SendKeys(passInput, passwordNew);
         SendKeys(passConfInput, passwordConfirm);
-        Click(btnPass);
+        Click(passButton);
     }
 }

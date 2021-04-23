@@ -25,5 +25,4 @@ public class TestPruebasUnitarias extends BaseTest {
     public void LoginFail(String email, String loginFailText) {
         pruebasUnitarias.LoginFail(email, loginFailText, "//span[@class='a-list-item']");
     }
-
 }

@@ -39,12 +39,14 @@ public class TestPruebasRegresion extends BaseTest {
     public void DeleteItem() throws InterruptedException {
         pruebasRegresion.CheckPersistenceAfterDeleteItem();
     }
+
     @Test(priority = 5)
-    public void seeHistory() throws InterruptedException {
-        pruebasRegresion.seePurchasesRecord();
+    public void SeeHistory() throws InterruptedException {
+        pruebasRegresion.SeePurchasesRecord();
     }
+
     @Test(priority = 6)
-    public void seeItemInformacion() throws InterruptedException{
-            pruebasRegresion.seeItemInformation();
+    public void SeeItemInformation() throws InterruptedException {
+        pruebasRegresion.SeeItemInformation();
     }
 }
