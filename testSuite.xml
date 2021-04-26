@@ -12,16 +12,16 @@
     <parameter name="URL" value="https://www.amazon.com/"/>
     <parameter name="emailFail" value="russellm4x34@gmail.com"/>
     <parameter name="passwordFail" value="saffdv"/>
-    <parameter name="Name" value="Automation Tester"/>
+    <parameter name="name" value="Automation Tester"/>
     <parameter name="emailNew" value="autotesterqa70@gmail.com"/>
     <parameter name="passwordNew" value="@tester1166TY"/>
     <parameter name="passwordConfirm" value="@tester1166TY"/>
-    <parameter name="NameArt1" value="Ipad"/>
-    <parameter name="NameArt2" value="Ryzaen"/>
-    <parameter name="NameArt3" value="Asus"/>
-    <parameter name="NameArt4" value="Iphone"/>
-
-    <parameter name="NameFail" value="Test Fail Name"/>
+    <parameter name="nameArt1" value="Ipad"/>
+    <parameter name="nameArt2" value="Ryzaen"/>
+    <parameter name="nameArt3" value="Asus"/>
+    <parameter name="nameArt4" value="Iphone"/>
+    <parameter name="invalidEmailFormat" value="invalidEmailFormat"/>
+    <parameter name="nameFail" value="Test Fail Name"/>
     <parameter name="emailNewFail" value="autotesterqa70@gmaixl.coxm"/>
     <parameter name="passwordNewFail" value="Tester_666"/>
     <parameter name="passwordConfirmFail" value="Tester_666"/>
